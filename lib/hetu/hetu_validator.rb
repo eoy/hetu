@@ -12,7 +12,8 @@ class HetuValidator < ActiveModel::EachValidator
         # Rescue from the attribute error
         record.errors.add(attribute, :invalid)
       end
-      p.valid?
+      
+      p.present? && p.valid ? return true : return false
     end
   end
 end
