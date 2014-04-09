@@ -13,7 +13,12 @@ class HetuValidator < ActiveModel::EachValidator
         record.errors.add(attribute, :invalid)
       end
       
-      p.present? && p.valid ? return true : return false
+      if p.present? && p.valid
+        return true
+      else
+        return false
+      end
+      
     end
   end
 end
